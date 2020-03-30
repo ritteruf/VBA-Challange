@@ -1,0 +1,35 @@
+Sub stock_challange():
+
+Dim Sumtablerow As Long
+Sumtablerow = 2
+Total_Vol = 0 
+
+
+
+
+For i = 2 to Lrow
+
+    'column 1 row I doesnt equal column 1 row i+1 do this'
+    if Cells(i,1).Value <> Cells(i+1,1).Value Then 
+        'value in range(I2) = the value in the i row of column 1
+        Range("I"& Sumtablerow).Value = Cells(i,1).Value
+        
+        Range("J"& Sumtablerow).Value = Total_Vol
+
+        Sumtablerow = Sumtablerow + 1
+        Total_Vol = 0
+
+    Elseif Cells(i,1).Value = Cells(i+1,1).Value Then
+        Total_vol = Cells(i,7).Value + Total_Vol
+
+
+
+    End if
+
+
+Next i 
+
+
+
+End sub
+
